@@ -1,6 +1,6 @@
 # Quote Generator
 
-Author: YOUR NAME HERE
+Author: Nou Chylong
 
 ## Overview
 A tiny web app that serves a random inspirational quote. Built with Next.js (App Router + TypeScript), Supabase (Postgres + Auth + RLS), and a component system based on shadcn/ui + Tailwind CSS.
