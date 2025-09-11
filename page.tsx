@@ -1,10 +1,9 @@
-
 import { createClient } from '@/utils/supabase/server'
-import { cookies } from '@/next/headers'
+import { cookies } from 'next/headers'
 
 export default async function Page() {
-    const cookieStore = await cookies()
-    const supabase = createClient(cookieStore)
+    const cookieStore = cookies()
+    const supabase = createClient(await cookieStore)
 
     const { data: quotes } = await supabase.from('quotes').select()
 
@@ -16,9 +15,3 @@ export default async function Page() {
         </ul>
     )
 }
-
-
-
-
-
-
