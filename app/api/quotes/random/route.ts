@@ -30,8 +30,6 @@ export async function GET() {
 
     // 2. random index pick
     const randomIndex = Math.floor(Math.random() * count)
-
-    // 3. Fetch exactly that row (ordered by id for deterministic offset)
     const { data, error: rowErr } = await supabase
         .from("quotes")
         .select("id,text,author,created_at")
@@ -51,6 +49,6 @@ export async function GET() {
         )
     }
 
-    // Return wrapped object so frontend can read data.quote
+    //  wrap object data.quote
     return NextResponse.json({ quote: data[0] })
 }
